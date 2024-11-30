@@ -1,6 +1,5 @@
-// app/api/image/[dimensions]/route.ts
+import createSVG from '@/utils/createSVG';
 import { NextResponse } from 'next/server';
-import sharp from 'sharp';
 
 export async function GET(request, { params }){
   try {
@@ -21,31 +20,9 @@ export async function GET(request, { params }){
     })
   }
 
-  const image = await sharp({
-    create: {
-      width: width,
-      height: height,
-      channels: 4,
-      background: { r: 200, g: 200, b: 200, alpha: 1 }
-    }
-  }).composite([{
-    input: Buffer.from(
-      `<svg width="${width}" height="${height}">
-        <rect x="0" y="0" width="${width}" height="${height}" fill="#e2e8f0"/>
-        <text x="50%" y="50%" font-family="Arial" font-size="16" 
-              fill="#64748b" text-anchor="middle" dominant-baseline="middle">
-          ${width} x ${height}
-        </text>
-      </svg>`
-    ),
-    top: 0,
-    left: 0,
-  }])
-  .png()
-  .toBuffer();
+  const image = await createSVG(width, height)
   
-  
-  return new Response(image, {
+  return new NextResponse(image, {
     headers: {
       'Content-Type': 'image/png',
       'Cache-Control': 'public, max-age=31536000, immutable'
