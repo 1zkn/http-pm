@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ArrowLeft, Code2, Wrench } from 'lucide-react'
+import { ArrowLeft, Code2, Wrench, Image } from 'lucide-react'
 
 export default function Docs() {
   return (
@@ -32,6 +32,25 @@ export default function Docs() {
               <p>Use our HTTP Status Codes API to test various response codes.</p>
               <Link href="/status" className="text-blue-600 hover:underline mt-4 inline-block">
                 View Status Codes Documentation
+              </Link>
+            </CardContent>
+          </Card>
+
+          
+          <Card className="bg-white border-gray-200 shadow-md">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Image className="h-5 w-5" />
+                Image API
+              </CardTitle>
+              <CardDescription className="text-gray-600">
+                Generate placeholder images on-the-fly
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Use our Image API to generate custom placeholder images for your projects.</p>
+              <Link href="/img" className="text-blue-600 hover:underline mt-4 inline-block">
+                View Image API Documentation
               </Link>
             </CardContent>
           </Card>
