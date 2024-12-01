@@ -74,12 +74,3 @@ This is a public service for the developer community. Contributions and feedback
 ## License
 
 Open source - License details TBD
-```
-
-Questo formato markdown:
-- Mantiene entrambe le versioni (italiana e inglese)
-- Usa la corretta formattazione per titoli, sottotitoli e code blocks
-- Preserva lo stile di documentazione tecnica
-- È compatibile con la maggior parte dei renderer markdown
-
-Vuoi che aggiunga o modifichi qualche sezione?
