@@ -32,7 +32,6 @@ export default function ImageDocs() {
             <ul className="list-disc list-inside space-y-1 text-lg">
               <li>Width and height must be between 1 and 2000 pixels</li>
               <li>Only generates simple placeholder images</li>
-              <li>Custom background colors are not supported</li>
               <li>Custom text/titles are not supported</li>
             </ul>
           </div>
